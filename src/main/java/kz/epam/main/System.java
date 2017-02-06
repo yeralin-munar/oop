@@ -75,10 +75,11 @@ public class System extends Entity{
 
     @Override
     public String toString(){
-        return "Система "+getName()+
-                "\nКоличество звезд: "+ stars.size()+
-                "\nКоличество планет: "+ planets.size()+
-                "\nЗвезды: "+ stars+
-                "\nПланеты: "+planets;
+        return "" +
+                "***********Система "+getName()+"***********"+
+                "\n|Количество звезд: "+ stars.size()+
+                "\n|Количество планет: "+ planets.size()+
+                "\n*** Звезды: "+ stars+
+                "\n*** Планеты: "+planets;
     }
 }
