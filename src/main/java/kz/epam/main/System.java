@@ -6,8 +6,8 @@ import java.util.ArrayList;
  * Created by munar on 2/3/17.
  */
 public class System extends Entity{
-    ArrayList<Planet> planets = new ArrayList<Planet>();
-    ArrayList<Star> stars = new ArrayList<Star>();
+    private ArrayList<Planet> planets = new ArrayList<Planet>();
+    private ArrayList<Star> stars = new ArrayList<Star>();
 
     public System(String name){
         super(name);

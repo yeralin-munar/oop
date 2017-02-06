@@ -7,7 +7,7 @@ import java.util.ArrayList;
  * Created by munar on 2/3/17.
  */
 public class Galaxy extends Entity{
-    ArrayList<System> systems = new ArrayList<System>();
+    private ArrayList<System> systems = new ArrayList<System>();
 
     public Galaxy(String name){
         super(name);

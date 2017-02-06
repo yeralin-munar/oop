@@ -27,13 +27,13 @@ public class SpaceFactory {
         universe = new Universe("One");
         addGalaxies(universe, galaxy_names);
 
-        addSystemToGalaxy(universe, "Млечный путь", system_names[0]);
-        addPlanetsToSystem(universe, system_names[0], solar_system_planets);
-        addStarsToSystem(universe, system_names[0], solar_system_star);
+        addSystemToGalaxy(universe, galaxy_names[0], system_names[0]);
+        addPlanetsToSystem(universe, galaxy_names[0], system_names[0], solar_system_planets);
+        addStarsToSystem(universe, galaxy_names[0], system_names[0], solar_system_star);
 
-        addSystemToGalaxy(universe, "Центавра", system_names[1]);
-        addPlanetsToSystem(universe, system_names[1], centaur_system_planets);
-        addStarsToSystem(universe, system_names[1], centaur_system_star);
+        addSystemToGalaxy(universe, galaxy_names[1], system_names[1]);
+        addPlanetsToSystem(universe, galaxy_names[1], system_names[1], centaur_system_planets);
+        addStarsToSystem(universe, galaxy_names[1], system_names[1], centaur_system_star);
     }
 
     public Universe getUniverse(){
@@ -51,20 +51,20 @@ public class SpaceFactory {
     }
 
 
-    private void addPlanetsToSystem(Universe universe, String name, String[] planet_names ){
-        System system = universe.getSystemByName(name);
+    private void addPlanetsToSystem(Universe universe, String galaxy_name, String system_name, String[] planet_names ){
+        System system = universe.getGalaxyByName(galaxy_name).getSystemByName(system_name);
         for (String planet: planet_names){
             if (system != null) {
-                universe.getSystemByName(name).addPlanet(planet);
+                system.addPlanet(planet);
             }
         }
     }
 
-    private void addStarsToSystem(Universe universe, String name, String[] star_names ){
-        System system = universe.getSystemByName(name);
+    private void addStarsToSystem(Universe universe, String galaxy_name, String system_name, String[] star_names ){
+        System system = universe.getGalaxyByName(galaxy_name).getSystemByName(system_name);
         for (String star: star_names){
             if (system != null) {
-                universe.getSystemByName(name).addStar(star);
+                system.addStar(star);
             }
         }
     }

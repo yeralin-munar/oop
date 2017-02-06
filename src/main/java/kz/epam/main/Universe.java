@@ -8,7 +8,7 @@ import java.util.ArrayList;
  * Created by munar on 2/3/17.
  */
 public class Universe extends Entity{
-    ArrayList<Galaxy> galaxies = new ArrayList<Galaxy>();
+    private ArrayList<Galaxy> galaxies = new ArrayList<Galaxy>();
 
     public Universe(String name){
         super(name);
@@ -34,16 +34,6 @@ public class Universe extends Entity{
         for (Galaxy galaxy: galaxies){
             if (galaxy.getName().equals(name)){
                 return galaxy;
-            }
-        }
-        return null;
-    }
-
-    public System getSystemByName(String name){
-        for (Galaxy galaxy: galaxies){
-            System system = galaxy.getSystemByName(name);
-            if (system != null){
-                return system;
             }
         }
         return null;
